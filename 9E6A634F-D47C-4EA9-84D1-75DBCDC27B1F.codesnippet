@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>masButton</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        //
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self addSubview:button];
+        
+        imageName = [MSetting shareInstance].isIpad?@"":@"";
+        UIImage *image = [UIImage imageNamed:imageName];
+        [button setImage:image forState:UIControlStateNormal];
+        
+        button.translatesAutoresizingMaskIntoConstraints = NO;
+        left = [MSetting shareInstance].isIpad ? 0:0;
+ 
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+        }];
+        
+        [button addTarget:self action:@selector() forControlEvents:UIControlEventTouchUpInside];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9E6A634F-D47C-4EA9-84D1-75DBCDC27B1F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>masButton</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>创建button约束</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

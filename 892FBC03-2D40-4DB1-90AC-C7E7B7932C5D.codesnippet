@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>masImageView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        //
+        UIImageView *imageView = [[UIImageView alloc] init];
+        [self addSubview:imageView];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        imageName = [MSetting shareInstance].isIpad?@"":@"";
+        image = [UIImage imageNamed:imageName];
+        imagePath = [[NSBundle mainBundle] pathForResource:imageName ofType:nil];
+        image = [UIImage imageWithContentsOfFile:imagePath];
+        imageView.image = image;
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = NO;
+        left = [MSetting shareInstance].isIpad ? 0:0;
+        
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+        }];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>892FBC03-2D40-4DB1-90AC-C7E7B7932C5D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>masImageView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>创建UIImageView约束</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
