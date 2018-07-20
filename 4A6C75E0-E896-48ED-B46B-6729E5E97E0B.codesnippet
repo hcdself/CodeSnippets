@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>archiveRuntime</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//runtime方式进行归档
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    unsigned int outCount;
+    //获取所有属性
+    objc_property_t *propertyList = class_copyPropertyList([self class], &amp;outCount);
+    for (int i = 0;i &lt; outCount; i++) {
+        objc_property_t property = propertyList[i];
+        //获取属性key
+        const char *propertyName = property_getName(property);
+        NSString *propertyNameStr = [NSString stringWithUTF8String:propertyName];
+        //获取属性值(kvc)
+        id value = [self valueForKey:propertyNameStr];
+        //属性归档
+        [aCoder encodeObject:value forKey:propertyNameStr];
+    }
+    free(propertyList);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4A6C75E0-E896-48ED-B46B-6729E5E97E0B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>archiveRuntime</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>runtime归档</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
