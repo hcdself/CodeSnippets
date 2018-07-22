@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>alertView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"点击内容不存在" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+    alert.tag = 1000;
+    [alert show];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>90BA984F-0A72-4497-BE51-AF60298001D6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>alertView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>创建alertView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>collectionViewCreate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.itemSize = CGSizeMake(0, 0);
+    layout.minimumLineSpacing = 0;
+    layout.minimumInteritemSpacing = 0;
+    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) collectionViewLayout:layout];
+    [self.view addSubview:collectionView];
+    collectionView.showsHorizontalScrollIndicator = NO;
+    collectionView.showsVerticalScrollIndicator = NO;
+    collectionView.directionalLockEnabled = YES;
+    collectionView.bounces = NO;
+    collectionView.pagingEnabled = YES;
+    collectionView.delegate = self;
+    collectionView.dataSource = self;
+    
+    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@""];
+    //[collectionView registerNib:[UINib nibWithNibName:@"" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@""];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>61DAEEF3-DD7C-4822-B4FD-22F0474BDE58</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>collectionViewCreate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>创建collectionView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
