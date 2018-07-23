@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>shotImage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//1、开启图片上下文
+UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, YES, [UIScreen mainScreen].scale);
+//2、获取当前上下文
+CGContextRef context = UIGraphicsGetCurrentContext();
+//3、将制定layer渲染到当前上下文
+[self.view.layer renderInContext:context];
+//4、从上下文中获取图片
+UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+UIGraphicsEndImageContext();
+//5、修改图片大小
+UIGraphicsBeginImageContext(CGSizeMake(500, 500));
+context = UIGraphicsGetCurrentContext();
+[image drawInRect:CGRectMake(0, 0, 500, 500)];
+image = UIGraphicsGetImageFromCurrentImageContext();
+UIGraphicsEndImageContext();
+//6、裁剪图片
+UIGraphicsBeginImageContext(CGSizeMake(image.size.width, image.size.height));
+context = UIGraphicsGetCurrentContext();
+CGPathRef path = CGPathCreateWithRect(CGRectMake(100, 100, 100, 100), NULL);
+CGContextAddPath(context, path);
+CGContextClip(context);
+[image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
+image = UIGraphicsGetImageFromCurrentImageContext();
+CGPathRelease(path);
+
+//7、图片存储
+NSData *data = UIImagePNGRepresentation(image);
+NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+filePath = [filePath stringByAppendingPathComponent:@"1.png"];
+NSLog(@"%@",filePath);
+[data writeToFile:filePath atomically:YES];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>036831B8-7464-477F-867B-D81CCA44A05A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>shotImage</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>截图</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>customLog</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#define LOG_STATE 0
+
+#if LOG_STATE
+#define LOGS(msg1, ...) NSLog(msg1, ##__VA_ARGS__)
+#else
+#define LOGS(msg1, ...)
+#endif</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>96FE8866-E7DB-437D-A9D3-95843868BB9E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>customLog</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>自定义打印宏</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
