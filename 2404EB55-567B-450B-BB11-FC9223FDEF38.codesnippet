@@ -3,31 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>scrollViewCreate</string>
+	<string>xibViewCreate</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>UIScrollView *scrollView = [[UIScrollView alloc] init];
-scrollView.frame = CGRectMake(0, 0, 0, 0);
-[self.view addSubview:scrollView];
-
-scrollView.delegate = self;
-scrollView.bounces = NO;
-scrollView.pagingEnabled = YES;
-scrollView.directionalLockEnabled = YES;
-scrollView.showsHorizontalScrollIndicator = NO;
-scrollView.showsVerticalScrollIndicator = NO;
-scrollView.contentSize = CGSizeMake(0, 0);</string>
+	<string>UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"" owner:nil options:nil] lastObject];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1E2D7F19-C71E-42BE-8C35-CE0D98295F9C</string>
+	<string>2404EB55-567B-450B-BB11-FC9223FDEF38</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>scrollViewCreate</string>
+	<string>xibViewCreate</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>创建scrollView</string>
+	<string>xib创建view</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

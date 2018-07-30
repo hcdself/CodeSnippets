@@ -3,27 +3,33 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>alertViewDelegateCreate</string>
+	<string>dashLineCreate</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (alertView.tag == 1000) {
-        if (buttonIndex == 0) {
-            NSLog(@"点击了 %@",[alertView buttonTitleAtIndex:0]);
-        }
-    }
+	<string>- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    
+    CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] init];
+    shapeLayer.strokeColor = [UIColor cyanColor].CGColor;
+    shapeLayer.fillColor = [UIColor clearColor].CGColor;
+    shapeLayer.path = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
+    shapeLayer.frame = self.bounds;
+    shapeLayer.lineWidth = 2.0;
+    shapeLayer.lineDashPattern = @[@8,@4];//线长、间隔
+    [self.layer addSublayer:shapeLayer];
+    
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B39D05F1-3BBD-4085-8C49-FF01E8EB44B0</string>
+	<string>378930CD-4E33-4F61-BA13-0E1F15194635</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>alertViewDelegateCreate</string>
+	<string>dashLineCreate</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>创建alertView代理</string>
+	<string>为view设置虚线</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>microphoneGet</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (BOOL)getMicrophoneAuthorization:(void(^)(BOOL isSucceed))completion {
+    //获取麦克风权限
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
+    //第一次使用，弹出框选择是否授权时
+    __block BOOL isSucceed = YES;
+    if (authStatus == AVAuthorizationStatusNotDetermined) {
+        //采用信号量确保线程同步
+        dispatch_semaphore_t semaPhore = dispatch_semaphore_create(1);
+        dispatch_semaphore_wait(semaPhore, DISPATCH_TIME_FOREVER);
+
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeAudio completionHandler:^(BOOL granted) {
+            if (completion) {
+                completion(granted);
+            }
+            isSucceed = granted;
+            dispatch_semaphore_signal(semaPhore);
+            dispatch_semaphore_signal(semaPhore);
+        }];
+        dispatch_semaphore_wait(semaPhore, DISPATCH_TIME_FOREVER);
+        
+    } else if (authStatus == AVAuthorizationStatusRestricted || authStatus ==AVAuthorizationStatusDenied){
+        if (completion) {
+            completion(NO);
+        }
+        isSucceed = NO;
+    }
+    return isSucceed;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>86BBC7D7-6C7F-48D0-8921-F9115CE8C239</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>microphoneGet</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>获取麦克风权限</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

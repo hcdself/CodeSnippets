@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>calculateStringHeight</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//计算字符串的高
+- (CGFloat)getHeightForString:(NSString *)str withMaxWidth:(CGFloat)width font:(UIFont *)font {
+    CGSize maxSize = CGSizeMake(width, CGFLOAT_MAX);
+    NSStringDrawingOptions options = NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
+    NSDictionary *attributeDict = @{NSFontAttributeName:font};
+    CGRect rect = [str boundingRectWithSize:maxSize options:options attributes:attributeDict context:nil];
+    return rect.size.height;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>01D109CC-77AD-470A-B399-36E2C4ECD00E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>calculateStringHeight</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>计算字符串的高</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

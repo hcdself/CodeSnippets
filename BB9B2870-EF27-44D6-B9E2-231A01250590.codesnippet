@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>getColorFromPoint</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//获取某个点的颜色
+- (UIColor *)colorOfPoint:(CGPoint)point {
+    /**
+     函数:CGBitmapContextCreate
+     
+     作用：创建1个位图上下文
+     参数：
+     data:指向要渲染的绘制内存的地址。这个内存块的大小至少是（bytesPerRow*height）个字节
+     width:bitmap的宽度,单位为像素
+     height:bitmap的高度,单位为像素
+     bitsPerComponent:内存中像素的每个组件的位数.例如，对于32位像素格式和RGB 颜色空间，你应该将这个值设为8.
+     bytesPerRow:bitmap的每一行在内存所占的比特数
+     colorspace:bitmap上下文使用的颜色空间。
+     bitmapInfo:指定bitmap是否包含alpha通道，像素中alpha通道的相对位置，像素组件是整形还是浮点型等信息的字符串。
+     */
+    unsigned char pixel[4] = {0};
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(pixel, 1, 1, 8, 4, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+    //转换坐标
+    CGContextTranslateCTM(context, -point.x, -point.y);
+    //渲染
+    [self.customView.layer renderInContext:context];
+    
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    UIColor *color = [UIColor colorWithRed:pixel[0]/255.0 green:pixel[1]/255.0 blue:pixel[2]/255.0 alpha:pixel[3]/255.0];
+    
+    return color;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BB9B2870-EF27-44D6-B9E2-231A01250590</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>getColorFromPoint</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>获取某个点的颜色</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
