@@ -3,22 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>screen</string>
+	<string>hexColor</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>Preprocessor</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height</string>
+	<string>#define UIColorFromHex(s) [UIColor colorWithRed:(((s &amp; 0xFF0000) &gt;&gt; 16))/255.0 green:(((s &amp;0xFF00) &gt;&gt;8))/255.0 blue:((s &amp;0xFF))/255.0 alpha:1.0]</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>35B5E744-D1FA-43BB-B695-849A5AF9782F</string>
+	<string>BD90A2C9-A36E-4A77-B7FD-0E18F6B550AA</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>screen</string>
+	<string>hexColor</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>屏幕宽高宏</string>
+	<string>16进制颜色</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

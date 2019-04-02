@@ -3,22 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>screen</string>
+	<string>createWebView</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height</string>
+	<string>    UIWebView *webView = [[UIWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    webView.delegate = self;
+    NSString *urlStr = @"https://www.baidu.com";
+    NSURL *url = [NSURL URLWithString:urlStr];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [webView loadRequest:request];
+    [self.view addSubview:webView];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>35B5E744-D1FA-43BB-B695-849A5AF9782F</string>
+	<string>BA8B70AB-12E7-4541-8D56-5E969D8F6AA0</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>screen</string>
+	<string>createWebView</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>屏幕宽高宏</string>
+	<string>创建webView</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

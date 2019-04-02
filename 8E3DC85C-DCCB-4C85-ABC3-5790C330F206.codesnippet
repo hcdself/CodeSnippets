@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>keyboardObserver</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)keyboardWillShow:(NSNotification *)noti {
+    
+    NSDictionary *keyboardInfo = noti.userInfo;
+    CGRect keyboardFrame = [keyboardInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat duration = [keyboardInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    //转换坐标
+    CGRect convertRect = [self.textField2.superview convertRect:self.textField2.frame toView:self.textField2.window];
+    //键盘与输入框的距离
+    CGFloat distance =  keyboardFrame.origin.y - CGRectGetMaxY(convertRect);
+    
+    if (distance&lt;10) {//设置键盘与输入框的间距最小为10
+        distance = 10-distance;
+        [UIView animateWithDuration:duration animations:^{
+            self.textField2.transform = CGAffineTransformMakeTranslation(0, -distance);
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+}
+
+- (void)keyboardWillHide:(NSNotification *)noti {
+   // self.textField2.transform = CGAffineTransformIdentity;
+    NSDictionary *keyboardInfo = noti.userInfo;
+    CGFloat duration = [keyboardInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    [UIView animateWithDuration:duration animations:^{
+        self.textField2.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8E3DC85C-DCCB-4C85-ABC3-5790C330F206</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>keyboardObserver</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>键盘监听方法</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

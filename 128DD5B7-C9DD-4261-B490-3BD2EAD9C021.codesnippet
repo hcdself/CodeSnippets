@@ -3,22 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>screen</string>
+	<string>wks</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height</string>
+	<string>__weak typeof(self)weakSelf = self;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>35B5E744-D1FA-43BB-B695-849A5AF9782F</string>
+	<string>128DD5B7-C9DD-4261-B490-3BD2EAD9C021</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>screen</string>
+	<string>wks-weakSelf</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>屏幕宽高宏</string>
+	<string>弱引用</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

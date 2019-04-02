@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>CategoryDict</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level {//该方法会执行多次
+    NSMutableString *string = [NSMutableString string];
+    // 开头拼接{
+    [string appendString:@"{\n"];
+    // 遍历所有的键值对
+    [self enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+        [string appendFormat:@"\t%@ = %@;\n", key,value];
+    }];
+    //删除末尾多余的一个分号(系统的没删)
+    //    NSRange range = [string rangeOfString:@";" options:NSBackwardsSearch];
+    //    if(range.location != NSNotFound){
+    //        [string deleteCharactersInRange:range];
+    //    }
+    // 结尾拼接}
+    [string appendString:@"}"];
+    return string;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>489A0CC1-0DC1-4055-9D95-9240BE72D4EE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>CategoryDict</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>字典扩展打印方法</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

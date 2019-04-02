@@ -3,22 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>screen</string>
+	<string>rgbColor</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height</string>
+	<string>#define kRGBColor(r, g, b)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>35B5E744-D1FA-43BB-B695-849A5AF9782F</string>
+	<string>5209924C-2857-4A5A-AF46-5B042DE45389</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>screen</string>
+	<string>rgbColor</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>屏幕宽高宏</string>
+	<string>RGB颜色</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

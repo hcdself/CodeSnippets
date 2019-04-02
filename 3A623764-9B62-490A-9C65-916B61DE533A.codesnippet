@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>descriptionRewrite</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (NSString *)description {//使用前导入头文件#import &lt;objc/runtime.h&gt;
+    //将所有属性存入字典
+    NSMutableDictionary *propertyDict = [NSMutableDictionary dictionary];
+    unsigned int outCount;
+    objc_property_t *propertyList = class_copyPropertyList([self class], &amp;outCount);
+    for (int i = 0; i&lt;outCount; i++) {
+        objc_property_t property = propertyList[i];
+        const char *propertyName = property_getName(property);
+        NSString *propertyNameStr = [NSString stringWithUTF8String:propertyName];
+        id value = [self valueForKey:propertyNameStr];
+        [propertyDict setObject:value forKey:propertyNameStr];
+    }
+    free(propertyList);
+    //从字典获取字符串
+    NSString *desStr = [NSString stringWithFormat:@"%@",propertyDict];
+    return desStr;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3A623764-9B62-490A-9C65-916B61DE533A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>descriptionRewrite</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>重写模型的description方法</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
